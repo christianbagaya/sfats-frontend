@@ -100,7 +100,7 @@
     }
   </style>
 </head>
-
+<body></body>
 <!-- Modal Login Form begin-->
 <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
@@ -211,32 +211,15 @@
 		      <th scope="col">Office</th>
 		    </tr>
 		  </thead>
-
 		  <tbody>
-		  	<tr>
-		      <th>Abdul Wasay</th>
-		      <td>Active</td>
-		      <td>Fablab 102</td>
-		      <td><a href="" data-toggle="modal" data-target="#exampleModalCenter"><div class="alert alert-warning">
-      	<strong>Schedule meeting</strong>
-      </div></a></td>
-		     </tr>
-         <tr>
-          <th>Oduro-Frimpong</th>
-          <td>Active</td>
-          <td>Design Lab 100</td>
-          <td><a href="" data-toggle="modal" data-target="#exampleModalCenter"><div class="alert alert-warning">
-        <strong>Schedule meeting</strong>
-      </div></a></td>
-         </tr>
-         <tr>
-          <th>David Sampah</th>
-          <td>Active</td>
-          <td>Engineering Block 110</td>
-          <td><a href="" data-toggle="modal" data-target="#exampleModalCenter"><div class="alert alert-warning">
-        <strong>Schedule meeting</strong>
-      </div></a></td>
-         </tr>
+            <tr *ngFor="let profile of profile_list">
+                    <th>{{ profile.user_details["first_name"] }} {{ profile.user_details["last_name"] }}</th>
+                    <td>{{profile.avail_status}}</td>
+                    <td>{{profile.address}}</td>
+                    <td><a href="" data-toggle="modal" data-target="#exampleModalCenter"><div class="alert alert-warning">
+                <strong>Schedule meeting</strong>
+            </div></a></td>
+                   </tr>
 		  </tbody>
 		</table>
     </div>
@@ -299,9 +282,7 @@
         <input type="submit" value="search">
     </form>
 
-    <app-profile-item *ngFor="let profile of profile_list" [profile]="profile">
-    </app-profile-item>
-
+    
 
 
 
