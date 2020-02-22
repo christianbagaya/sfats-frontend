@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "sfats-frontend": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sfats-frontend"
+    }
+  },
+  "defaultProject": "sfats-frontend",
+  "cli": {
+    "analytics": "50ac854b-1f40-47ca-ba24-41743abf2076"
+  }
 }

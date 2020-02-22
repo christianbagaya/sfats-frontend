@@ -8,6 +8,7 @@ import { UserItemComponent } from './components/user-item/user-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileItemComponent } from './components/profile-item/profile-item.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,15 @@ import { ProfileItemComponent } from './components/profile-item/profile-item.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function  tokenGetter() {
+             return     localStorage.getItem('access_token');},
+        whitelistedDomains: ['localhost:3000'],
+        blacklistedRoutes: ['http://localhost:3000/auth/login']
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
