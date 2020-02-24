@@ -1,0 +1,40 @@
+<html>
+
+
+<head>
+    <title>SFATS home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/7a2ccd5936.js" crossorigin="anonymous"></script>
+</head>
+
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" style="color: white; font-size: 20px;" href="#">SFATS</a>
+      </div>
+    </div>
+  </nav>
+<div class="container" style="font-size: 20px;">
+    <form method="POST" #loginForm = "ngForm" (ngSubmit)="onFormSubmit(loginForm)">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" ngModel>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password" ngModel>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Login">
+    </form>
+</div>
+</html>

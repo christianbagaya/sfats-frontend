@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  todosUrl:string = "https://sfats.herokuapp.com/api/users/";
+  todosUrl:string = "https://sfats.herokuapp.com/api/profile/";
   // 'http://217.0.0.1:8000/api/users/';
 
   constructor(private http: HttpClient) { }
@@ -15,3 +15,5 @@ export class UserService {
     return this.http.get<User[]>(this.todosUrl);
   }
 }
+
+

@@ -1,5 +1,5 @@
-<div>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <title>SFATS home</title>
   <meta charset="utf-8">
@@ -100,41 +100,8 @@
     }
   </style>
 </head>
-<body></body>
-<!-- Modal Login Form begin-->
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <form>
+<body>
 
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" [formControl]="email" id="defaultForm-email" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
-        </div>
-
-        <div class="md-form mb-4">
-          <i class="fas fa-lock prefix grey-text"></i>
-          <input type="password" [formControl]="password" id="defaultForm-pass" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
-        </div>
-
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <input type="submit" class="btn btn-default">
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
 <!--Modal Sign up form Begin-->
 <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
@@ -190,15 +157,13 @@
   <div class="row content">
     <div class="col-sm-2 sidenav">
     	<i style="font-size: 50px;" class="fas fa-user"></i>
-    	<h3>User Name</h3>
     	<!--Active Pulse-->
     	<span id="pulsing">
     	<div class="blobs-container">
     		<div class="blob green"></div>
     	</div> 
     </span>
-    	<button style="width: 100%;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLoginForm">Login</button>
-    	<p>Dont have an account yet? <a data-toggle="modal" data-target="#modalRegisterForm">Register here</a></p>
+    	<a style="width: 100%;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLoginForm" href="/stafalty">Staff/Faculty</a>
     </div>
     <div style="height: 100%;" class="col-sm-10"> 
       <div class="alert alert-warning">
@@ -214,15 +179,16 @@
 		      <th scope="col">Office</th>
 		    </tr>
 		  </thead>
+
 		  <tbody>
-            <tr *ngFor="let profile of profile_list">
-                    <th>{{ profile.user_details["first_name"] }} {{ profile.user_details["last_name"] }}</th>
-                    <td>{{profile.avail_status}}</td>
-                    <td>{{profile.address}}</td>
-                    <td><a href="" data-toggle="modal" data-target="#exampleModalCenter"><div class="alert alert-warning">
-                <strong>Schedule meeting</strong>
-            </div></a></td>
-                   </tr>
+		  	<tr *ngFor = "let profile of profile_list">
+                <th>{{ profile.user_details["first_name"] }} {{ profile.user_details["last_name"] }}</th>
+                <td>{{profile.avail_status}}</td>
+                <td>{{profile.address}}</td>
+                <td><a href="" data-toggle="modal" data-target="#exampleModalCenter"><div class="alert alert-warning">
+                    <strong>Schedule meeting</strong>
+                  </div></a></td>
+              </tr>
 		  </tbody>
 		</table>
     </div>
@@ -280,14 +246,5 @@
 <footer style="height: 50px;" class="container-fluid text-center bg-primary">
 </footer>
 
-    <form action="">
-        <input type="text" name="search" id=""> 
-        <input type="submit" value="search">
-    </form>
-
-    
-
-
-
-
-</div>
+</body>
+</html>

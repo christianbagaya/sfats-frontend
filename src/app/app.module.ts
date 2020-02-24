@@ -9,7 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileItemComponent } from './components/profile-item/profile-item.component';
 import { JwtModule } from '@auth0/angular-jwt';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserlistComponent,
     UserItemComponent,
     ProfileComponent,
-    ProfileItemComponent
+    ProfileItemComponent,
+    LoginComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: function  tokenGetter() {
@@ -31,7 +36,6 @@ import { ReactiveFormsModule } from '@angular/forms';
         blacklistedRoutes: ['http://localhost:3000/auth/login']
       }
     }),
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

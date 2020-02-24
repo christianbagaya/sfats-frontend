@@ -103,37 +103,7 @@
         </style>
       </head>
       
-      <!-- Modal Login Form begin-->
-      <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header text-center">
-              <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body mx-3">
-              <div class="md-form mb-5">
-                <i class="fas fa-envelope prefix grey-text"></i>
-                <input type="email" id="defaultForm-email" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
-              </div>
       
-              <div class="md-form mb-4">
-                <i class="fas fa-lock prefix grey-text"></i>
-                <input type="password" id="defaultForm-pass" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
-              </div>
-      
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-              <button class="btn btn-default">Login</button>
-            </div>
-          </div>
-        </div>
-      </div>
       <!--Modal Sign up form Begin-->
       <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
@@ -189,15 +159,15 @@
         <div class="row content">
           <div class="col-sm-2 sidenav">
               <i style="font-size: 50px;" class="fas fa-user"></i>
-              <h3>User Name</h3>
+              <h3>{{user.user_details["first_name"]}} {{user.user_details["last_name"]}} </h3>
               <!--Active Pulse-->
               <span id="pulsing">
               <div class="blobs-container">
                   <div class="blob green"></div>
               </div> 
           </span>
-              <button style="width: 100%;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLoginForm">Login</button>
-              <p>Dont have an account yet? <a data-toggle="modal" data-target="#modalRegisterForm">Register here</a></p>
+              <button style="width: 100%;" type="button" class="btn btn-{{color}}" data-toggle="modal" data-target="#modalLoginForm" (click)="toggleAvailability()">{{user.avail_status}}</button>
+              <!-- <p>Dont have an account yet? <a data-toggle="modal" data-target="#modalRegisterForm">Register here</a></p> -->
           </div>
           <div style="height: 100%;" class="col-sm-8"> 
             <div class="alert alert-warning">
@@ -209,35 +179,18 @@
                 <thead>
                   <tr>
                     <th scope="col">Name</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Time</th>
+                    <th scope="col">Date and Time</th>
                     <th scope="col">Status</th>
                   </tr>
                 </thead>
       
-                <tbody>
+                <tbody *ngFor = "let schedule of schedules">
                     <tr>
-                    <th>Christian Bagaya</th>
-                    <td>Today</td>
-                    <td>10:00AM - 11:00PM</td>
-                    <td><a href="" data-toggle="modal" data-target="#AcceptInvite"><div class="alert alert-warning">
-                <strong>Pending</strong>
-            </div></a></td>
-                   </tr>
-                   <tr>
-                    <th>Babes Wodumo</th>
-                    <td>Today</td>
-                    <td>4:00PM - 6:00PM</td>
-                    <td><a href="" data-toggle="modal" data-target="#AcceptInvite"><div class="alert alert-warning">
-                <strong>Pending</strong>
-            </div></a></td>
-                   </tr><tr>
-                    <th>Tony Chisenga</th>
-                    <td>Today</td>
-                    <td>8:00AM - 9:30AM</td>
-                    <td><a href=""><div class="alert alert-success">
-                <strong>Accepted</strong>
-            </div></a></td>
+                    <th>{{schedule.studentName}}</th>
+                    <td>{{schedule.time}}</td>     
+                    <td><button (click)="toggleSchedul()" data-toggle="modal" data-target="#AcceptInvite"><div class="alert alert-{{status_color}}">
+                <strong>{{schedule.schedule_status | lowercase}}</strong>
+            </div></button></td>
                    </tr>
                 </tbody>
               </table>
