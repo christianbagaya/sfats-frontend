@@ -91,9 +91,10 @@ export class UserlistComponent implements OnInit {
   }
 
   toggleSchedule(schedule){
-    
+
     this.scheduleService.toggleSchedule(schedule.id, schedule.schedule_status).subscribe(data=>{
       console.log(data);
     });
+    location.reload();
   }
 }

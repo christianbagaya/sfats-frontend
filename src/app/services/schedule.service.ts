@@ -17,7 +17,7 @@ export class ScheduleService {
   }
 
   toggleSchedule(schedule_id, current_status){
-    status = "";
+    status = current_status;
     if(current_status=='PENDING'){
       status = "ACCEPTED";
     }else{
