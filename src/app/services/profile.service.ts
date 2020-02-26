@@ -15,7 +15,6 @@ export class ProfileService {
 
   
   getProfile():Observable<Profile[]>{
-    console.log("Here I am")
     return this.http.get<Profile[]>(this.url);
   }
 

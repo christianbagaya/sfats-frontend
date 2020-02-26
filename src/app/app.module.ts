@@ -12,6 +12,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
     ProfileComponent,
     ProfileItemComponent,
     LoginComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

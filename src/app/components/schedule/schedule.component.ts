@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScheduleService } from 'src/app/services/schedule.service';
 
 @Component({
   selector: 'app-schedule',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScheduleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private scheduleService: ScheduleService) { }
 
   ngOnInit(): void {
+  }
+
+  onFormSubmit(loginForm){
+    this.scheduleService.create_schedule(loginForm.value).subscribe(data=>{
+      console.log(data);
+    });
   }
 
 }

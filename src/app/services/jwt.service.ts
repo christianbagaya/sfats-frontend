@@ -31,7 +31,6 @@ export class JwtService {
   public refresh(refresh_token){
     return this.httpClient.post<{access: string}>('http://sfats.herokuapp.com/api/token/refresh/', {refresh: refresh_token}).pipe(tap(res => {
       localStorage.setItem('access', res.access);
-      
     }))
   }
 

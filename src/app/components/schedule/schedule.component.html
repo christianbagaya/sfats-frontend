@@ -9,25 +9,46 @@
     <script src="https://kit.fontawesome.com/7a2ccd5936.js" crossorigin="anonymous"></script>
 </head>
 
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" style="color: white; font-size: 20px;" href="/">SFATS</a>
+    </div>
+  </div>
+</nav>
+
 <div class="container">
-    <form>
+  <div class="jumbotron">
+    <h3>Schedule a meeting</h3>
+    <hr>
+  </div>
+    <form #loginForm = "ngForm" (ngSubmit)="onFormSubmit(loginForm)">
         <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
+          <div class="form-group col-md-12">
+            <label for="inputCity">Student Name</label>
+            <input type="text" class="form-control" id="inputCity" name="studentName" ngModel>
           </div>
         </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="inputCity">Email</label>
+            <input type="text" class="form-control" id="inputCity" name="email" ngModel>
+          </div>
+        </div>
+        
+          <div class="form-group col-md-12">
+            <label for="inputCity">Phone number</label>
+            <input type="text" class="form-control" id="inputCity" name="phone_number" ngModel>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="inputCity">Date</label>
+            <input type="text" class="form-control" id="inputCity" name="time" ngModel>
+          </div>
         <input type="submit" class="btn btn-primary" value="Schedule a meeting">
       </form>
 </div>

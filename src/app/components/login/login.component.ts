@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   onFormSubmit(loginForm){
     this.email = loginForm.value.email;
     this.password = loginForm.value.password;
-    console.log(this.email);
     this.jwtService.login(this.email, this.password).subscribe(data=>{
       console.log(data);
     });

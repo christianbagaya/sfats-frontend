@@ -55,12 +55,11 @@ export class UserlistComponent implements OnInit {
       data.forEach(element=>{
         if(element.stafalty == this.user_id){
           this.schedules.push(element);
-          if(this.schedule_status == "ACCEPTED"){
+          if(element.schedule_status == "ACCEPTED"){
             this.status_color = "success";
           }else{
             this.status_color = "warning"
           }
-          console.log(this.schedules);
         }
       })
     });
@@ -83,7 +82,6 @@ export class UserlistComponent implements OnInit {
   }
 
   toggleAvailability(){
-    console.log("there we go");
     this.profileService.toggleStatus(this.profile_id, this.avail_status).subscribe(data=>{
       console.log(data);
     });
@@ -92,8 +90,10 @@ export class UserlistComponent implements OnInit {
     //  console.log("Change")
   }
 
-  toggleSchedul(){
-    // this.scheduleService.toggleSchedule(this.sche)
+  toggleSchedule(schedule){
+    
+    this.scheduleService.toggleSchedule(schedule.id, schedule.schedule_status).subscribe(data=>{
+      console.log(data);
+    });
   }
-
 }

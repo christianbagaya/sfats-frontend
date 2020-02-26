@@ -148,7 +148,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" style="color: white; font-size: 20px;" href="#">SFATS</a>
+      <a class="navbar-brand" style="color: white; font-size: 20px;" href="/">SFATS</a>
     </div>
   </div>
 </nav>
@@ -185,9 +185,9 @@
                 <th>{{ profile.user_details["first_name"] }} {{ profile.user_details["last_name"] }}</th>
                 <td>{{profile.avail_status}}</td>
                 <td>{{profile.address}}</td>
-                <td><a href="" data-toggle="modal" data-target="#exampleModalCenter"><div class="alert alert-warning">
+                <td><button data-toggle="modal" data-target="#exampleModalCenter" (click)="scheduleMeeting(profile)"><div class="alert alert-warning">
                     <strong>Schedule meeting</strong>
-                  </div></a></td>
+                  </div></button></td>
               </tr>
 		  </tbody>
 		</table>

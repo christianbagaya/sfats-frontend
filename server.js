@@ -12,4 +12,4 @@ app.get('/*', function(req, res){
 })
 
 
-console.log("Console listening");
+console.log("Console listening!");

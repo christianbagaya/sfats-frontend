@@ -150,7 +150,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>                        
             </button>
-            <a class="navbar-brand" style="color: white; font-size: 20px;" href="#">SFATS</a>
+            <a class="navbar-brand" style="color: white; font-size: 20px;" href="/">SFATS</a>
           </div>
         </div>
       </nav>
@@ -188,7 +188,7 @@
                     <tr>
                     <th>{{schedule.studentName}}</th>
                     <td>{{schedule.time}}</td>     
-                    <td><button (click)="toggleSchedul()" data-toggle="modal" data-target="#AcceptInvite"><div class="alert alert-{{status_color}}">
+                    <td><button (click)="toggleSchedule(schedule)" data-toggle="modal" data-target="#AcceptInvite"><div class="alert alert-{{status_color}}">
                 <strong>{{schedule.schedule_status | lowercase}}</strong>
             </div></button></td>
                    </tr>
@@ -198,7 +198,7 @@
           <div class="col-sm-2 sidenav text-left">
               <h4>Active Staff</h4>
               <ul>
-                <li><a href="" data-toggle="modal" data-target="#exampleModalCenter">Pride Yaphama Mhango</a></li>
+                <li><a href="/logout" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-danger">logout</a></li>
             </ul>
           </div>
         </div>

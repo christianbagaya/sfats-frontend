@@ -5,12 +5,16 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from "./services/auth.guard";
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
   { path: 'stafalty', canActivate: [AuthGuard], component: UserlistComponent},
-  { path: 'home', component: ProfileComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'schedule', component: ScheduleComponent}
+  { path: '', component: ProfileComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'schedule', component: ScheduleComponent },
+  { path: "logout", component: LogoutComponent },
+  { path: "schedule", component: ScheduleComponent}
+
 
 ];
 
